@@ -10,7 +10,7 @@
 
 module.exports = {
   config: {
-    fontSize: 12,
+    fontSize: 14,
     fontFamily: '"Fira Code", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
     cursorColor: 'rgba(248, 28, 229, 0.75)',
     cursorShape: 'BLOCK',
