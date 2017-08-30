@@ -105,4 +105,6 @@ PS1='\
 alias update="brew update && brew upgrade && brew cleanup"
 alias bun="bundle exec"
 alias migrate="bin/rails db:migrate && bin/rails db:migrate RAILS_ENV=test"
+alias rakemigrate="bin/rake db:migrate && bin/rake db:migrate RAILS_ENV=test"
 alias dbreset="bin/rails db:drop && bin/rails db:create && migrate && bin/rails db:seed"
+alias rakereset="bin/rake db:drop && bin/rake db:create && rakemigrate && bin/rake db:seed"

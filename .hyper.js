@@ -38,14 +38,13 @@ module.exports = {
       lightCyan: '#00ffff',
       lightWhite: '#ffffff'
     },
-    shell: ''
+    shell: '',
+    enableVibrancy: true,
   },
 
   plugins: [
     'hypercwd',
-    'hyper-chesterish',
-    'hyper-tabs-enhanced',
-    'hyper-statusline'
+    'hyper-one-light',
   ],
 
   localPlugins: []
