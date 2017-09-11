@@ -29,9 +29,7 @@ eval "$(rbenv init -)"                         # rbenv
 export PATH="/usr/local/bin:$PATH"             # brew doctor
 export PATH="/usr/local/sbin:$PATH"            # brew doctor
 export PATH="/usr/local/heroku/bin:$PATH"      # heroku
-export ANDROID_HOME=/Users/niki/Library/Android/sdk
-export PATH=${PATH}:${ANDROID_HOME}/tools
-export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+export ANDROID_HOME=/usr/local/opt/android-sdk
 
 # Bundler
 export EDITOR="atom"
