@@ -25,10 +25,9 @@
 # 1. Required .bash_profile additions for certain applications
 #-------------------------------------------------------------------------------
 
-eval "$(rbenv init -)"                         # rbenv
 export PATH="/usr/local/bin:$PATH"             # brew doctor
 export PATH="/usr/local/sbin:$PATH"            # brew doctor
-export PATH="/usr/local/heroku/bin:$PATH"      # heroku
+eval "$(rbenv init -)"   # rbenv
 
 # bash_completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
