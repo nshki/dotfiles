@@ -29,17 +29,6 @@ eval "$(rbenv init -)"                         # rbenv
 export PATH="/usr/local/bin:$PATH"             # brew doctor
 export PATH="/usr/local/sbin:$PATH"            # brew doctor
 export PATH="/usr/local/heroku/bin:$PATH"      # heroku
-export ANDROID_HOME=/Users/niki/Library/Android/sdk
-export PATH=${PATH}:${ANDROID_HOME}/tools
-export PATH=${PATH}:${ANDROID_HOME}/platform-tools
-
-# Bundler
-export EDITOR="atom"
-
-# MySQL
-MYSQL=/usr/local/mysql/bin
-export PATH=$PATH:$MYSQL
-export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 
 # bash_completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then

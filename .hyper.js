@@ -40,11 +40,13 @@ module.exports = {
     },
     shell: '',
     enableVibrancy: true,
+    confirmQuit: true,
   },
 
   plugins: [
     'hypercwd',
     'hyper-one-light',
+    'hyper-confirm',
   ],
 
   localPlugins: []
