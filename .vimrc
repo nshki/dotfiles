@@ -18,12 +18,14 @@ syntax on
 set background=dark
 colorscheme hybrid_material
 
-let g:airline_theme = 'hybrid'
+let g:airline_theme='hybrid'
 
 set autoindent
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 set number
-set shiftwidth=2
 
-let NERDTreeShowHidden = 1
+let NERDTreeShowHidden=1
 
