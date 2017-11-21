@@ -41,15 +41,6 @@ fi
 
 export CLICOLOR=1   # enable colors
 
-# # Print some big text on startup
-# cat << 'EOF'
-#  _               _
-# | |__   __ _ ___| |__
-# | '_ \ / _` / __| '_ \
-# | |_) | (_| \__ \ | | |
-# |_.__/ \__,_|___/_| |_|
-# EOF
-
 
 #-------------------------------------------------------------------------------
 # 3. Prompt customization
@@ -90,9 +81,5 @@ PS1='\
 # 4. Aliases
 #-------------------------------------------------------------------------------
 
-alias update="brew update && brew upgrade && brew cleanup"
-alias bun="bundle exec"
-alias migrate="bin/rails db:migrate && bin/rails db:migrate RAILS_ENV=test"
-alias rakemigrate="bin/rake db:migrate && bin/rake db:migrate RAILS_ENV=test"
-alias dbreset="bin/rails db:drop && bin/rails db:create && migrate && bin/rails db:seed"
-alias rakereset="bin/rake db:drop && bin/rake db:create && rakemigrate && bin/rake db:seed"
+source ~/.bash_aliases
+
