@@ -33,6 +33,5 @@ set expandtab
 set number
 set shiftwidth=2
 
-autocmd vimenter * NERDTree
 let NERDTreeShowHidden = 1
 
