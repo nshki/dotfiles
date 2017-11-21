@@ -17,6 +17,9 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-fugitive'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
 syntax on
@@ -29,4 +32,7 @@ set autoindent
 set expandtab
 set number
 set shiftwidth=2
+
+autocmd vimenter * NERDTree
+let NERDTreeShowHidden = 1
 
