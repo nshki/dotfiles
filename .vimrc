@@ -5,6 +5,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'sheerun/vim-polyglot'
+Plug 'styled-components/vim-styled-components'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-fugitive'
@@ -19,6 +20,7 @@ set background=dark
 colorscheme hybrid_material
 
 let g:airline_theme='hybrid'
+let g:airline_powerline_fonts=1
 
 set autoindent
 set tabstop=2
