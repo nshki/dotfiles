@@ -27,6 +27,7 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
+set list
 set number
 set colorcolumn=80
 
