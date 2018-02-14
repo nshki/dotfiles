@@ -12,6 +12,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 syntax on
