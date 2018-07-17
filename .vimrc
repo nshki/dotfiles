@@ -10,9 +10,11 @@ Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'mattn/emmet-vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
+Plug 'w0rp/ale'
 call plug#end()
 
 syntax on
@@ -20,8 +22,7 @@ colorscheme hybrid_material
 
 let g:airline_theme='hybrid'
 let g:airline_powerline_fonts=1
-let g:ctrlp_custom_ignore='node_modules\|DS_Store\|git\|tmp'
-let g:ctrlp_working_path_mode=''  " Limit CtrlP to starting directory
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 
 set background=dark
 set autoindent
