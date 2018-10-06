@@ -29,6 +29,7 @@ colorscheme hybrid_material
 
 let g:airline_theme='hybrid'
 let g:airline_powerline_fonts=1
+let NERDTreeShowHidden=1
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 
 set background=dark
@@ -41,8 +42,5 @@ set expandtab
 set list
 set number
 set colorcolumn=80
-set lcs+=space:·    " Show spaces as dots
-set backspace=2     " Make backspace behave like most editors
-
-let NERDTreeShowHidden=1
-
+set lcs+=space:· " Show spaces as dots
+set backspace=2 " Make backspace behave like most editors
