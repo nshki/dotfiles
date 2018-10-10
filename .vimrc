@@ -22,6 +22,7 @@ Plug 'mattn/emmet-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
+Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 
 syntax on
