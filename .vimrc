@@ -6,8 +6,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'sheerun/vim-polyglot'
@@ -28,10 +27,12 @@ call plug#end()
 syntax on
 colorscheme hybrid_material
 
-let g:airline_theme='hybrid'
-let g:airline_powerline_fonts=1
-let NERDTreeShowHidden=1
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
+let g:lightline = { 'colorscheme': 'wombat' }
+let g:tmuxline_theme = 'lightline_visual'
+let g:tmuxline_preset = 'minimal'
+let g:tmuxline_powerline_separators = 0
+let NERDTreeShowHidden = 1
 
 set background=dark
 set autoindent
