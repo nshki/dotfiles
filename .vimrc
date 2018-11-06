@@ -46,6 +46,7 @@ set nowrap
 set expandtab
 set list
 set number
+set relativenumber
 set colorcolumn=80
 set lcs+=space:· " Show spaces as dots
 set backspace=2 " Make backspace behave like most editors
