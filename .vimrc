@@ -32,7 +32,16 @@ syntax on
 colorscheme hybrid_material
 
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
-let g:lightline = { 'colorscheme': 'wombat' }
+let g:lightline = {
+      \   'colorscheme': 'wombat',
+      \   'active': {
+      \     'left': [
+      \       ['mode', 'paste'],
+      \       ['gitbranch', 'readonly', 'filename', 'modified']
+      \     ]
+      \   },
+      \   'component_function': { 'gitbranch': 'fugitive#head' }
+      \ }
 let g:lightline.tabline = { 'left': [['buffers']], 'right': [['close']] }
 let g:lightline.component_expand = { 'buffers': 'lightline#bufferline#buffers' }
 let g:lightline.component_type = { 'buffers': 'tabsel' }
