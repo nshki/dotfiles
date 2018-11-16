@@ -7,6 +7,7 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'itchyny/lightline.vim'
+Plug 'mengelbrecht/lightline-bufferline'
 Plug 'edkolev/tmuxline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'sheerun/vim-polyglot'
@@ -32,6 +33,10 @@ colorscheme hybrid_material
 
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 let g:lightline = { 'colorscheme': 'wombat' }
+let g:lightline.tabline = { 'left': [['buffers']], 'right': [['close']] }
+let g:lightline.component_expand = { 'buffers': 'lightline#bufferline#buffers' }
+let g:lightline.component_type = { 'buffers': 'tabsel' }
+let g:lightline#bufferline#show_number = 1
 let g:tmuxline_theme = 'lightline_visual'
 let g:tmuxline_preset = 'minimal'
 let g:tmuxline_powerline_separators = 0
@@ -42,6 +47,7 @@ set autoindent
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
+set showtabline=2
 set nowrap
 set expandtab
 set list
