@@ -63,6 +63,8 @@ set expandtab
 set list
 set number
 set relativenumber
+set foldmethod=syntax
+set foldlevel=1
 set colorcolumn=80
 set lcs+=space:· " Show spaces as dots
 set backspace=2 " Make backspace behave like most editors
