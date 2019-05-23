@@ -30,6 +30,15 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'janko-m/vim-test'
 call plug#end()
 
+" This function allows for vim-test to work under Docker.
+function! DockerTransform(cmd) abort
+  if filereadable('docker-compose.yml')
+    return 'docker-compose run test '.a:cmd
+  else
+    return a:cmd
+  endif
+endfunction
+
 syntax on
 colorscheme hybrid_material
 
@@ -52,6 +61,8 @@ let g:tmuxline_theme = 'lightline_visual'
 let g:tmuxline_preset = 'minimal'
 let g:tmuxline_powerline_separators = 0
 let NERDTreeShowHidden = 1
+let g:test#custom_transformations = { 'docker': function('DockerTransform') }
+let g:test#transformation = 'docker'
 
 set background=dark
 set autoindent
