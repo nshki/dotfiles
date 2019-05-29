@@ -1,9 +1,13 @@
 tap 'homebrew/cask-fonts'
+tap 'heroku/brew'
+
+cask 'aptible'
 cask 'font-hack'
 
 brew 'bash'
 brew 'bash-completion'
 brew 'git'
+brew 'heroku'
 brew 'neofetch'
 brew 'neovim'
 brew 'postgresql', restart_service: true
