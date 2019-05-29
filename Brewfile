@@ -8,6 +8,7 @@ brew 'bash'
 brew 'bash-completion'
 brew 'git'
 brew 'heroku'
+brew 'hub'
 brew 'neofetch'
 brew 'neovim'
 brew 'postgresql', restart_service: true
