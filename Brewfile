@@ -3,6 +3,7 @@ tap 'heroku/brew'
 
 cask 'aptible'
 cask 'font-hack'
+cask 'spectacle'
 
 brew 'bash'
 brew 'bash-completion'
