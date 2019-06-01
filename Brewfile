@@ -1,5 +1,6 @@
 tap 'homebrew/cask-fonts'
 tap 'heroku/brew'
+tap 'beeftornado/rmtree'
 
 cask 'alfred'
 cask 'authy'
