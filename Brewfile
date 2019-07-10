@@ -2,6 +2,7 @@ tap 'homebrew/cask-fonts'
 tap 'heroku/brew'
 tap 'beeftornado/rmtree'
 
+cask '1password'
 cask 'alfred'
 cask 'authy'
 cask 'appcleaner'
