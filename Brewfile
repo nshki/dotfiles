@@ -4,7 +4,6 @@ tap 'beeftornado/rmtree'
 
 cask '1password'
 cask 'alfred'
-cask 'authy'
 cask 'appcleaner'
 cask 'aptible'
 cask 'browserstacklocal'
