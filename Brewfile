@@ -15,6 +15,7 @@ cask 'font-hack'
 cask 'google-backup-and-sync'
 cask 'google-chrome'
 cask 'itsycal'
+cask 'notion'
 cask 'slack'
 cask 'spectacle'
 
