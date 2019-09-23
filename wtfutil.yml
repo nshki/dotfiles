@@ -88,7 +88,7 @@ wtf:
       enableStatus: true
       refreshInterval: 300
       repositories:
-        <your_repo_name>: "<your repo name>"
+        <your_repo_name>: "<your user/org name>"
       username: "<your username>"
       position:
         top: 0
