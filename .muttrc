@@ -1,0 +1,17 @@
+set realname  = "<your name>"
+set from = "<your email>"
+set ssl_starttls = yes
+set ssl_force_tls = yes
+set smtp_authenticators = 'gssapi:login'
+set folder = "imaps://imap.gmail.com:993"
+set imap_user = "<your email>"
+set imap_pass = "<your app pass>"
+set smtp_url = "smtp://<your email>@smtp.gmail.com:587/"
+set smtp_pass = "<your app pass>"
+set record = "+[Gmail]/Sent Mail"
+set postponed = "+[Gmail]/Drafts"
+set spoolfile = "+INBOX"
+set editor = "nvim"
+set charset = "utf-8"
+
+bind editor <space> noop

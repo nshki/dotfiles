@@ -25,9 +25,11 @@ brew 'git'
 brew 'heroku'
 brew 'hub'
 brew 'neofetch'
+brew 'neomutt'
 brew 'neovim'
 brew 'postgresql', restart_service: :changed
 brew 'rbenv'
 brew 'redis', restart_service: :changed
 brew 'the_silver_searcher'
 brew 'tmux'
+brew 'wtfutil'

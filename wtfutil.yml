@@ -1,0 +1,112 @@
+wtf:
+  colors:
+    border:
+      focusable: darkslateblue
+      focused: orange
+      normal: gray
+  grid:
+    columns: [51, 51, 51, 51]
+    rows: [10, 10, 10, 10, 11]
+  refreshInterval: 1
+  mods:
+    cmdrunner:
+      cmd: "neofetch"
+      title: "Neofetch"
+      enabled: true
+      position:
+        top: 0
+        left: 0
+        height: 4
+        width: 1
+      refreshInterval: 500
+    clocks:
+      title: "Clocks"
+      type: clocks
+      enabled: true
+      locations:
+        UTC: "Etc/UTC"
+        PST: "America/Los_Angeles"
+        EST: "America/New_York"
+      position:
+        top: 4
+        left: 0
+        height: 1
+        width: 1
+      refreshInterval: 15
+    battery:
+      type: power
+      title: "⚡️"
+      enabled: true
+      position:
+        top: 0
+        left: 1
+        height: 1
+        width: 1
+      refreshInterval: 15
+    ip:
+      type: ipinfo
+      title: "IP"
+      colors:
+        name: "lightblue"
+        value: "white"
+      enabled: true
+      position:
+        top: 1
+        left: 1
+        height: 1
+        width: 1
+      refreshInterval: 150
+    resources:
+      type: resourceusage
+      title: "Resources"
+      enabled: true
+      position:
+        top: 2
+        left: 1
+        height: 1
+        width: 1
+      refreshInterval: 1
+    circleci:
+      apiKey: "<your API key>"
+      enabled: true
+      position:
+        top: 3
+        left: 1
+        height: 2
+        width: 1
+      refreshInterval: 900
+    github:
+      apiKey: "<your API key>"
+      customQueries:
+        reviewRequested:
+          title: "Review Requested"
+          filter: "is:open is:pr -label:wip review-requested:<your username>"
+        otherPRs:
+          title: "Other Contributor's PRs"
+          filter: "is:open is:pr -author:<your username>"
+      enabled: true
+      enableStatus: true
+      refreshInterval: 300
+      repositories:
+        <your_repo_name>: "<your repo name>"
+      username: "<your username>"
+      position:
+        top: 0
+        left: 2
+        height: 3
+        width: 2
+    jira:
+      apiKey: "<your API key>"
+      domain: "https://<your Jira subdomain>.atlassian.net"
+      email: "<your email>"
+      enabled: true
+      jql: "assignee = <your username> and status != Done and status != resolved"
+      project: ["<your project name>"]
+      refreshInterval: 900
+      username: "<your username>"
+      verifyServerCertificate: true
+      position:
+        top: 3
+        left: 2
+        height: 2
+        width: 2
