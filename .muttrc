@@ -13,3 +13,5 @@ set editor = "nvim +':set textwidth=0' +':set wrapmargin=0' +':set wrap'"
 set charset = "utf-8"
 
 bind editor <space> noop
+bind index G imap-fetch-mail
+macro index,pager e "<save-message>=[Gmail]/All Mail<enter><enter>" "Archive"
