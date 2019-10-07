@@ -21,6 +21,7 @@ cask 'spectacle'
 
 brew 'bash'
 brew 'bash-completion'
+brew 'ctags'
 brew 'git'
 brew 'heroku'
 brew 'hub'
