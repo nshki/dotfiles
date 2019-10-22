@@ -26,7 +26,6 @@ brew 'git'
 brew 'heroku'
 brew 'hub'
 brew 'neofetch'
-brew 'neomutt'
 brew 'neovim'
 brew 'postgresql', restart_service: :changed
 brew 'rbenv'
