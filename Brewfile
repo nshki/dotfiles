@@ -1,12 +1,10 @@
 tap 'homebrew/cask-fonts'
 tap 'heroku/brew'
-tap 'beeftornado/rmtree'
 
 cask '1password'
 cask 'alfred'
 cask 'appcleaner'
 cask 'aptible'
-cask 'browserstacklocal'
 cask 'discord'
 cask 'dozer'
 cask 'figma'
