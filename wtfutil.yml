@@ -24,9 +24,13 @@ wtf:
       type: clocks
       enabled: true
       locations:
-        UTC: "Etc/UTC"
-        PST: "America/Los_Angeles"
-        EST: "America/New_York"
+        Pacific: "US/Pacific"
+        Central: "US/Central"
+        Eastern: "US/Eastern"
+        London: "Europe/London"
+        Japan: "Japan"
+        China: "Asia/Shanghai"
+        India: "Asia/Kolkata"
       position:
         top: 4
         left: 0
