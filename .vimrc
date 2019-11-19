@@ -28,6 +28,7 @@ Plug 'w0rp/ale'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'jiangmiao/auto-pairs'
 Plug 'janko-m/vim-test'
+Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 syntax on
