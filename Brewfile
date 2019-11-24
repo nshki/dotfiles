@@ -20,6 +20,7 @@ brew 'heroku'
 brew 'hub'
 brew 'neofetch'
 brew 'neovim'
+brew 'nvm'
 brew 'postgresql', restart_service: :changed
 brew 'rbenv'
 brew 'redis', restart_service: :changed
