@@ -3,12 +3,10 @@
 # Set up development directory.
 read -p "Enter absolute path to dev directory [~/dev]: " dev_dir
 dev_dir=${dev_dir:-~/dev}
-[ -d $dev_dir ] || mkdir $dev_dir
-cd $dev_dir
+mkdir -p $dev_dir
 
 # Clone dotfiles repository.
-[ -d $dev_dir/dotfiles ] || git clone https://github.com/nshki/dotfiles.git
-cd $dev_dir/dotfiles
+[ -d $dev_dir/dotfiles ] || git clone https://github.com/nshki/dotfiles.git $dev_dir/dotfiles
 
 # Ensure CLT for Xcode are installed.
 xcode-select --install
