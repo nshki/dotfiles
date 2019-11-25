@@ -1,23 +1,23 @@
 #!/bin/bash
 
 # Set up development directory.
-read -p "Enter path to dev directory [~/dev]: " dev_dir
+read -p "Enter absolute path to dev directory [~/dev]: " dev_dir
 dev_dir=${dev_dir:-~/dev}
 [ -d $dev_dir ] || mkdir $dev_dir
 cd $dev_dir
 
 # Clone dotfiles repository.
-[ -d ./dotfiles ] || git clone https://github.com/nshki/dotfiles.git
-cd ./dotfiles
+[ -d $dev_dir/dotfiles ] || git clone https://github.com/nshki/dotfiles.git
+cd $dev_dir/dotfiles
 
 # Ensure CLT for Xcode are installed.
 xcode-select --install
 
 # Install Homebrew and bundle.
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-cd ./config/macos/
+cd $dev_dir/dotfiles/config/macos/
 brew bundle
-cd ../../
+cd $dev_dir
 
 # Symlink dotfiles.
 [ -f ~/.bash_local ] || touch ~/.bash_local
@@ -30,13 +30,13 @@ rm ~/.vimrc && ln -s $dev_dir/dotfiles/config/.vimrc ~/.vimrc
 
 # Configure nvim to use .vimrc.
 mkdir -p ~/.config/nvim
-cp ./config/init.vim ~/.config/nvim
+cp $dev_dir/dotfiles/config/init.vim ~/.config/nvim
 
 # Install tpm.
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Add Terminal theme.
-open ./config/macos/shikidark.terminal
+open $dev_dir/dotfiles/config/macos/shikidark.terminal
 
 # Setup Git.
 read -p "Enter Git name: " git_name
