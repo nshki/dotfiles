@@ -51,7 +51,7 @@ if [ ! -f ~/.ssh/id_rsa ]; then
   ssh-keygen -t rsa -b 4096 -C $github_email
 fi
 eval "$(ssh-agent -s)"
-cp $dev_dir/dotfiles/config/sshconfig ~/.ssh/id_rsa
+cp $dev_dir/dotfiles/config/sshconfig ~/.ssh/config
 ssh-add -K ~/.ssh/id_rsa
 pbcopy < ~/.ssh/id_rsa.pub
 read -p "SSH key copied to clipboard. Add to GitHub (https://github.com/settings/keys). Press enter when done."
