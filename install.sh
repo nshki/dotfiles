@@ -61,6 +61,7 @@ read -p "Enter Git name: " git_name
 read -p "Enter Git email: " git_email
 git config --global user.name "$git_name"
 git config --global user.email $git_email
+git config --global core.editor nvim
 git config --global core.excludesfile ~/.gitignore_global
 
 # Setup SSH key with GitHub.
