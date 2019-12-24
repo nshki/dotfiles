@@ -8,7 +8,7 @@ mkdir -p $dev_dir
 # OS selection.
 while [[ $os != "debian" && $os != "macos" ]]
 do
-  read -p "What OS are you using? [debian|mac] " os
+  read -p "What OS are you using? [debian|macos]: " os
 done
 
 # Install apps.
@@ -20,9 +20,7 @@ elif [[ $os == "macos" ]]; then
 
   # Install Homebrew and bundle.
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  cd $dev_dir/dotfiles/config/macos/
-  brew bundle
-  cd $dev_dir
+  brew bundle --file $dev_dir/dotfiles/config/macos/Brewfile
 fi
 
 # Install tpm.
@@ -49,11 +47,11 @@ rm -f ~/.gitignore_global && ln -s $dev_dir/dotfiles/config/.gitignore_global ~/
 rm -f ~/.tmux.conf && ln -s $dev_dir/dotfiles/config/.tmux.conf ~/.tmux.conf
 rm -f ~/.tmuxline && ln -s $dev_dir/dotfiles/config/.tmuxline ~/.tmuxline
 rm -f ~/.vimrc && ln -s $dev_dir/dotfiles/config/.vimrc ~/.vimrc
-if [[ $os == "macos" ]]; then
-  rm -f ~/.bash_profile && ln -s $dev_dir/dotfiles/config/macos/.bash_profile ~/.bash_profile
-elif [[ $os == "debian" ]]; then
+if [[ $os == "debian" ]]; then
   echo -e "\nset -o vi" >> ~/.bashrc
   echo -e '\nPATH="~/.rbenv/bin:$PATH"' >> ~/.bashrc
+elif [[ $os == "macos" ]]; then
+  rm -f ~/.bash_profile && ln -s $dev_dir/dotfiles/config/macos/.bash_profile ~/.bash_profile
 fi
 
 # Setup Git.
@@ -72,12 +70,12 @@ if [ ! -f ~/.ssh/id_rsa ]; then
   ssh-keygen -t rsa -b 4096 -C $github_email
 fi
 eval "$(ssh-agent -s)"
-if [[ $os == "macos" ]]; then
+if [[ $os == "debian" ]]; then
+  eval "$(ssh-agent -s)"
+  xclip -sel clip < ~/.ssh/id_rsa.pub
+elif [[ $os == "macos" ]]; then
   cp $dev_dir/dotfiles/config/sshconfig ~/.ssh/config
   ssh-add -K ~/.ssh/id_rsa
   pbcopy < ~/.ssh/id_rsa.pub
-elif [[ $os == "debian" ]]; then
-  eval "$(ssh-agent -s)"
-  xclip -sel clip < ~/.ssh/id_rsa.pub
 fi
 read -p "SSH key copied to clipboard. Add to GitHub (https://github.com/settings/keys). Press enter when done."
