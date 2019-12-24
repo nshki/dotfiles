@@ -20,7 +20,7 @@ elif [[ $os == "macos" ]]; then
 
   # Install Homebrew and bundle.
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  brew bundle --file="$dev_dir/dotfiles/config/macos/Brewfile"
+  brew bundle --file=$dev_dir/dotfiles/config/macos/Brewfile
 fi
 
 # Install tpm.
