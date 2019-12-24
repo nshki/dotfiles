@@ -11,6 +11,9 @@ do
   read -p "What OS are you using? [debian|macos]: " os
 done
 
+# Clone dotfiles repository.
+[ -d $dev_dir/dotfiles ] || git clone https://github.com/nshki/dotfiles.git $dev_dir/dotfiles
+
 # Install apps.
 if [[ $os == "debian" ]]; then
   bash $dev_dir/dotfiles/config/debian/install_apps.sh
@@ -20,7 +23,7 @@ elif [[ $os == "macos" ]]; then
 
   # Install Homebrew and bundle.
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  brew bundle --file=$dev_dir/dotfiles/config/macos/Brewfile
+  brew bundle --file $dev_dir/dotfiles/config/macos/Brewfile
 fi
 
 # Install tpm.
@@ -29,9 +32,6 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # Configure nvim to use .vimrc.
 mkdir -p ~/.config/nvim
 cp $dev_dir/dotfiles/config/init.vim ~/.config/nvim
-
-# Clone dotfiles repository.
-[ -d $dev_dir/dotfiles ] || git clone https://github.com/nshki/dotfiles.git $dev_dir/dotfiles
 
 # Add Terminal themes.
 if [[ $os == "debian" ]]; then
