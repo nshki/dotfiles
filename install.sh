@@ -33,10 +33,11 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 mkdir -p ~/.config/nvim
 cp $dev_dir/dotfiles/config/init.vim ~/.config/nvim
 
-# Add Terminal themes.
+# Configure shell.
 if [[ $os == "debian" ]]; then
   bash -c "$(curl -fsSL https://raw.githubusercontent.com/denysdovhan/gnome-terminal-one/master/one-dark.sh)"
 elif [[ $os == "macos" ]]; then
+  chsh -s /usr/local/bin/bash
   open $dev_dir/dotfiles/config/macos/shikidark.terminal
 fi
 
