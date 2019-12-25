@@ -9,7 +9,7 @@ sudo apt install fonts-hack-ttf gnome-terminal neofetch neovim postgresql redis 
 
 # Add Snap apps.
 sudo snap install firefox
-sudo snap --classic slack heroku hub
+sudo snap install --classic slack heroku hub
 
 # Install nvm.
 #
