@@ -5,11 +5,13 @@ sudo apt update && sudo apt upgrade && sudo apt autoremove
 sudo apt install bash bash-completion build-essential curl git snap
 
 # Add APT apps.
-sudo apt install fonts-hack-ttf gnome-terminal neofetch neovim postgresql redis silversearcher-ag tmux xclip
+sudo apt install fonts-hack-ttf gconf2 gnome-terminal neofetch neovim postgresql redis silversearcher-ag tmux xclip
 
 # Add Snap apps.
 sudo snap install firefox
-sudo snap install --classic slack heroku hub
+sudo snap install --classic slack
+sudo snap install --classic heroku
+sudo snap install --clasic hub
 
 # Install nvm.
 #
