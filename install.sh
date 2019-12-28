@@ -49,8 +49,9 @@ rm -f ~/.tmux.conf && ln -s $dev_dir/dotfiles/config/.tmux.conf ~/.tmux.conf
 rm -f ~/.tmuxline && ln -s $dev_dir/dotfiles/config/.tmuxline ~/.tmuxline
 rm -f ~/.vimrc && ln -s $dev_dir/dotfiles/config/.vimrc ~/.vimrc
 if [[ $os == "debian" ]]; then
-  echo -e "\nset -o vi" >> ~/.bashrc
-  echo -e '\nPATH="~/.rbenv/bin:$PATH"' >> ~/.bashrc
+  echo "set -o vi" >> ~/.bashrc
+  echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+  echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 elif [[ $os == "macos" ]]; then
   rm -f ~/.bash_profile && ln -s $dev_dir/dotfiles/config/macos/.bash_profile ~/.bash_profile
 fi
