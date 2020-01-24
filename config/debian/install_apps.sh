@@ -2,16 +2,10 @@
 sudo apt update && sudo apt upgrade && sudo apt autoremove
 
 # Prep base build packages.
-sudo apt install bash bash-completion build-essential curl git snap
+sudo apt install bash bash-completion build-essential curl git
 
 # Add APT apps.
 sudo apt install fonts-hack-ttf gconf2 gnome-terminal neofetch neovim postgresql redis silversearcher-ag tmux xclip
-
-# Add Snap apps.
-sudo snap install firefox
-sudo snap install --classic slack
-sudo snap install --classic heroku
-sudo snap install --clasic hub
 
 # Install nvm.
 #

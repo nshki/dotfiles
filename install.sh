@@ -6,8 +6,7 @@ dev_dir=${dev_dir:-~/dev}
 mkdir -p $dev_dir
 
 # OS selection.
-while [[ $os != "debian" && $os != "macos" ]]
-do
+while [[ $os != "debian" && $os != "macos" ]]; do
   read -p "What OS are you using? [debian|macos]: " os
 done
 
