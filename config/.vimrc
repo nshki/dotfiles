@@ -5,7 +5,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'drewtempelmeyer/palenight.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'edkolev/tmuxline.vim'
@@ -32,11 +32,17 @@ Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 syntax on
-colorscheme hybrid_material
+colorscheme palenight
+
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 let g:lightline = {
-      \   'colorscheme': 'wombat',
+      \   'colorscheme': 'palenight',
       \   'active': {
       \     'left': [
       \       ['mode', 'paste'],
@@ -52,6 +58,7 @@ let g:lightline#bufferline#show_number = 1
 let g:tmuxline_theme = 'lightline_visual'
 let g:tmuxline_preset = 'minimal'
 let g:tmuxline_powerline_separators = 0
+let g:palenight_terminal_italics = 1
 let NERDTreeShowHidden = 1
 
 set background=dark
