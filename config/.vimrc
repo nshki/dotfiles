@@ -5,7 +5,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'drewtempelmeyer/palenight.vim'
+Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'edkolev/tmuxline.vim'
@@ -32,7 +32,7 @@ Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 syntax on
-colorscheme palenight
+colorscheme onedark
 
 if (has('termguicolors'))
   set termguicolors
@@ -40,7 +40,7 @@ endif
 
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 let g:lightline = {
-      \   'colorscheme': 'palenight',
+      \   'colorscheme': 'onedark',
       \   'active': {
       \     'left': [
       \       ['mode', 'paste'],
