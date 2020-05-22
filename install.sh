@@ -32,11 +32,6 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 mkdir -p ~/.config/nvim
 cp $dev_dir/dotfiles/config/init.vim ~/.config/nvim
 
-# Configure shell.
-if [[ $os == "debian" ]]; then
-  bash -c "$(curl -fsSL https://raw.githubusercontent.com/denysdovhan/gnome-terminal-one/master/one-dark.sh)"
-fi
-
 # Symlink and configure dotfiles.
 [ -f ~/.bash_local ] || touch ~/.bash_local
 rm -f ~/.bash_aliases && ln -s $dev_dir/dotfiles/config/.bash_aliases ~/.bash_aliases
@@ -77,3 +72,12 @@ elif [[ $os == "macos" ]]; then
   pbcopy < ~/.ssh/id_rsa.pub
 fi
 read -p "SSH key copied to clipboard. Add to GitHub (https://github.com/settings/keys). Press enter when done."
+
+# Setup Kitty config.
+git clone --depth 1 git@github.com:dexpota/kitty-themes.git ~/.config/kitty/kitty-themes
+ln -s ~/.config/kitty/kitty-themes/themes/OneDark.conf ~/.config/kitty/theme.conf
+if [[ $os == "debian" ]]; then
+  ln -s $dev_dir/dotfiles/config/debian/kitty.conf ~/.config/kitty/kitty.conf
+elif [[ $os == "macos" ]]; then
+  ln -s $dev_dir/dotfiles/config/macos/kitty.conf ~/.config/kitty/kitty.conf
+fi
