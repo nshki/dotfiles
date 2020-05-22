@@ -5,7 +5,7 @@ sudo apt update && sudo apt upgrade && sudo apt autoremove
 sudo apt install bash bash-completion build-essential curl git
 
 # Add APT apps.
-sudo apt install fonts-hack-ttf gconf2 gnome-terminal neofetch neovim postgresql redis silversearcher-ag tmux xclip
+sudo apt install fonts-hack-ttf gconf2 gnome-terminal hub neofetch neovim postgresql redis silversearcher-ag tmux xclip
 
 # Install nvm.
 #
