@@ -56,6 +56,7 @@ let g:lightline#bufferline#show_number = 1
 let g:tmuxline_theme = 'lightline_visual'
 let g:tmuxline_preset = 'minimal'
 let g:tmuxline_powerline_separators = 0
+let g:vue_pre_processors = 'detect_on_enter'
 let NERDTreeShowHidden = 1
 
 set background=dark
