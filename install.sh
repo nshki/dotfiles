@@ -76,7 +76,7 @@ read -p "SSH key copied to clipboard. Add to GitHub (https://github.com/settings
 # Setup Kitty config.
 git clone --depth 1 git@github.com:dexpota/kitty-themes.git ~/.config/kitty/kitty-themes
 ln -s ~/.config/kitty/kitty-themes/themes/OneDark.conf ~/.config/kitty/theme.conf
-rm ~/.config/kitty/kitty.conf
+[[ -f ~/.config/kitty/kitty.conf ]] && rm ~/.config/kitty/kitty.conf
 if [[ $os == "debian" ]]; then
   ln -s $dev_dir/dotfiles/config/debian/kitty.conf ~/.config/kitty/kitty.conf
 elif [[ $os == "macos" ]]; then
