@@ -33,7 +33,7 @@ mkdir -p ~/.config/nvim
 cp $dev_dir/dotfiles/config/init.vim ~/.config/nvim
 
 # Symlink and configure dotfiles.
-[ -f ~/.bash_local ] || touch ~/.bash_local
+[ ! -f ~/.bash_local ] && touch ~/.bash_local
 rm -f ~/.bash_aliases && ln -s $dev_dir/dotfiles/config/.bash_aliases ~/.bash_aliases
 rm -f ~/.gitignore_global && ln -s $dev_dir/dotfiles/config/.gitignore_global ~/.gitignore_global
 rm -f ~/.tmux.conf && ln -s $dev_dir/dotfiles/config/.tmux.conf ~/.tmux.conf
@@ -41,8 +41,6 @@ rm -f ~/.tmuxline && ln -s $dev_dir/dotfiles/config/.tmuxline ~/.tmuxline
 rm -f ~/.vimrc && ln -s $dev_dir/dotfiles/config/.vimrc ~/.vimrc
 if [[ $os == "debian" ]]; then
   echo "set -o vi" >> ~/.bashrc
-  echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
-  echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 elif [[ $os == "macos" ]]; then
   rm -f ~/.bash_profile && ln -s $dev_dir/dotfiles/config/macos/.bash_profile ~/.bash_profile
 fi
@@ -64,7 +62,6 @@ if [ ! -f ~/.ssh/id_rsa ]; then
 fi
 eval "$(ssh-agent -s)"
 if [[ $os == "debian" ]]; then
-  eval "$(ssh-agent -s)"
   xclip -sel clip < ~/.ssh/id_rsa.pub
 elif [[ $os == "macos" ]]; then
   cp $dev_dir/dotfiles/config/sshconfig ~/.ssh/config
@@ -72,13 +69,3 @@ elif [[ $os == "macos" ]]; then
   pbcopy < ~/.ssh/id_rsa.pub
 fi
 read -p "SSH key copied to clipboard. Add to GitHub (https://github.com/settings/keys). Press enter when done."
-
-# Setup Kitty config.
-git clone --depth 1 git@github.com:dexpota/kitty-themes.git ~/.config/kitty/kitty-themes
-ln -s ~/.config/kitty/kitty-themes/themes/OneDark.conf ~/.config/kitty/theme.conf
-[[ -f ~/.config/kitty/kitty.conf ]] && rm ~/.config/kitty/kitty.conf
-if [[ $os == "debian" ]]; then
-  ln -s $dev_dir/dotfiles/config/debian/kitty.conf ~/.config/kitty/kitty.conf
-elif [[ $os == "macos" ]]; then
-  ln -s $dev_dir/dotfiles/config/macos/kitty.conf ~/.config/kitty/kitty.conf
-fi
