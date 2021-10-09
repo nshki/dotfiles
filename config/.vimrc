@@ -5,30 +5,38 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+" Color scheme, syntax highlighting, and UI.
+Plug 'airblade/vim-gitgutter'
+Plug 'dense-analysis/ale'
+Plug 'edkolev/tmuxline.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
-Plug 'edkolev/tmuxline.vim'
-Plug 'airblade/vim-gitgutter'
 Plug 'sheerun/vim-polyglot'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-dadbod'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-obsession'
-Plug 'scrooloose/nerdtree'
+
+" Editing enhancements.
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/vim-easy-align'
 Plug 'mattn/emmet-vim'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+
+" Ruby and Rails.
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-rails'
+
+" Search and directory tree.
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
-Plug 'dense-analysis/ale'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'jiangmiao/auto-pairs'
-Plug 'janko-m/vim-test'
-Plug 'editorconfig/editorconfig-vim'
+Plug 'scrooloose/nerdtree'
+
+" Misc.
+Plug 'editorconfig/editorconfig-vim' " Per-project editor config.
+Plug 'janko-m/vim-test'              " Test runner.
+Plug 'tpope/vim-dadbod'              " Database client.
+Plug 'tpope/vim-fugitive'            " Git wrapper.
 call plug#end()
 
 syntax on
@@ -38,17 +46,24 @@ if (has('termguicolors'))
   set termguicolors
 endif
 
+xmap ea <Plug>(EasyAlign)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gtd <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
-let g:lightline = {
-      \   'colorscheme': 'onedark',
-      \   'active': {
-      \     'left': [
-      \       ['mode', 'paste'],
-      \       ['gitbranch', 'readonly', 'filename', 'modified']
-      \     ]
-      \   },
-      \   'component_function': { 'gitbranch': 'fugitive#head' }
-      \ }
+let g:lightline =
+  \ {
+  \   'colorscheme': 'onedark',
+  \   'active': {
+  \     'left': [
+  \       ['mode', 'paste'],
+  \       ['gitbranch', 'readonly', 'filename', 'modified']
+  \     ]
+  \   },
+  \   'component_function': { 'gitbranch': 'fugitive#head' }
+  \ }
 let g:lightline.tabline = { 'left': [['buffers']], 'right': [['close']] }
 let g:lightline.component_expand = { 'buffers': 'lightline#bufferline#buffers' }
 let g:lightline.component_type = { 'buffers': 'tabsel' }
@@ -56,7 +71,15 @@ let g:lightline#bufferline#show_number = 1
 let g:tmuxline_theme = 'lightline_visual'
 let g:tmuxline_preset = 'minimal'
 let g:tmuxline_powerline_separators = 0
-let g:vue_pre_processors = 'detect_on_enter'
+let g:coc_global_extensions =
+  \ [
+  \   'coc-html',
+  \   'coc-css',
+  \   'coc-html-css-support',
+  \   'coc-json',
+  \   'coc-tsserver',
+  \   'coc-graphql'
+  \ ]
 let NERDTreeShowHidden = 1
 
 set background=dark
@@ -74,4 +97,4 @@ set foldmethod=syntax
 set foldlevel=1
 set colorcolumn=80
 set lcs+=space:· " Show spaces as dots
-set backspace=2 " Make backspace behave like most editors
+set backspace=2  " Make backspace behave like most editors
