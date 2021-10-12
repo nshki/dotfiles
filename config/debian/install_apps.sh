@@ -5,4 +5,4 @@ sudo apt update && sudo apt upgrade && sudo apt autoremove
 sudo apt install bash bash-completion build-essential curl git
 
 # Add APT apps.
-sudo apt install neofetch neovim silversearcher-ag tmux xclip
+sudo apt install neofetch neovim ripgrep tmux xclip

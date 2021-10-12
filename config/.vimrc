@@ -27,8 +27,9 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
 
 " Search and directory tree.
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
-Plug 'junegunn/fzf.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'scrooloose/nerdtree'
 
 " Misc.
@@ -45,13 +46,16 @@ if (has('termguicolors'))
   set termguicolors
 endif
 
-xmap ea <Plug>(EasyAlign)
+xmap ga <Plug>(EasyAlign)
 nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gtd <Plug>(coc-type-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nnoremap <leader>ff <cmd>Telescope git_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 let g:lightline =
   \ {
   \   'colorscheme': 'onedark',
