@@ -72,13 +72,14 @@ let g:tmuxline_preset = 'minimal'
 let g:tmuxline_powerline_separators = 0
 let g:coc_global_extensions =
   \ [
-  \   'coc-html',
   \   'coc-css',
+  \   'coc-eslint',
+  \   'coc-graphql',
+  \   'coc-html',
   \   'coc-html-css-support',
   \   'coc-json',
-  \   'coc-tsserver',
-  \   'coc-graphql',
-  \   'coc-solargraph'
+  \   'coc-solargraph',
+  \   'coc-tsserver'
   \ ]
 let NERDTreeShowHidden = 1
 
