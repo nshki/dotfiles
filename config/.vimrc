@@ -7,7 +7,6 @@ endif
 call plug#begin('~/.vim/plugged')
 " Color scheme, syntax highlighting, and UI.
 Plug 'airblade/vim-gitgutter'
-Plug 'dense-analysis/ale'
 Plug 'edkolev/tmuxline.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
@@ -78,7 +77,8 @@ let g:coc_global_extensions =
   \   'coc-html-css-support',
   \   'coc-json',
   \   'coc-tsserver',
-  \   'coc-graphql'
+  \   'coc-graphql',
+  \   'coc-solargraph'
   \ ]
 let NERDTreeShowHidden = 1
 

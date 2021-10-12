@@ -28,12 +28,11 @@ fi
 # Install tpm.
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# Configure nvim to use .vimrc.
-mkdir -p ~/.config/nvim
-cp $dev_dir/dotfiles/config/init.vim ~/.config/nvim
-
 # Symlink and configure dotfiles.
 [ ! -f ~/.bash_local ] && touch ~/.bash_local
+mkdir -p ~/.config/nvim
+rm -f ~/.config/nvim/init.vim && ln -s $dev_dir/dotfiles/config/init.vim ~/.config/nvim/init.vim
+rm -f ~/.config/nvim/coc-settings.json && ln -s $dev_dir/dotfiles/config/coc-settings.json ~/.config/nvim/coc-settings.json
 rm -f ~/.bash_aliases && ln -s $dev_dir/dotfiles/config/.bash_aliases ~/.bash_aliases
 rm -f ~/.gitignore_global && ln -s $dev_dir/dotfiles/config/.gitignore_global ~/.gitignore_global
 rm -f ~/.tmux.conf && ln -s $dev_dir/dotfiles/config/.tmux.conf ~/.tmux.conf
