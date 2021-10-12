@@ -37,12 +37,15 @@ rm -f ~/.bash_aliases && ln -s $dev_dir/dotfiles/config/.bash_aliases ~/.bash_al
 rm -f ~/.gitignore_global && ln -s $dev_dir/dotfiles/config/.gitignore_global ~/.gitignore_global
 rm -f ~/.tmux.conf && ln -s $dev_dir/dotfiles/config/.tmux.conf ~/.tmux.conf
 rm -f ~/.tmuxline && ln -s $dev_dir/dotfiles/config/.tmuxline ~/.tmuxline
-rm -f ~/.vimrc && ln -s $dev_dir/dotfiles/config/.vimrc ~/.vimrc
 if [[ $os == "debian" ]]; then
   echo "set -o vi" >> ~/.bashrc
 elif [[ $os == "macos" ]]; then
   rm -f ~/.bash_profile && ln -s $dev_dir/dotfiles/config/macos/.bash_profile ~/.bash_profile
 fi
+
+# Install `vim-plug` for Neovim.
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # Setup Git.
 read -p "Enter Git name: " git_name
