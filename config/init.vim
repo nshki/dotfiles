@@ -5,6 +5,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
+Plug 'pantharshit00/vim-prisma'
 Plug 'sheerun/vim-polyglot'
 
 " Editing enhancements.
