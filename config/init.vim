@@ -5,6 +5,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
+Plug 'pantharshit00/vim-prisma'
 Plug 'sheerun/vim-polyglot'
 
 " Editing enhancements.
@@ -27,10 +28,10 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'scrooloose/nerdtree'
 
 " Misc.
-Plug 'editorconfig/editorconfig-vim' " Per-project editor config.
-Plug 'janko-m/vim-test'              " Test runner.
-Plug 'tpope/vim-dadbod'              " Database client.
-Plug 'tpope/vim-fugitive'            " Git wrapper.
+Plug 'editorconfig/editorconfig-vim' " Per-project editor config
+Plug 'janko-m/vim-test'              " Test runner
+Plug 'tpope/vim-dadbod'              " Database client
+Plug 'tpope/vim-fugitive'            " Git wrapper
 call plug#end()
 
 syntax on
@@ -75,7 +76,6 @@ let g:coc_global_extensions =
   \ [
   \   'coc-css',
   \   'coc-eslint',
-  \   'coc-graphql',
   \   'coc-html',
   \   'coc-html-css-support',
   \   'coc-json',
