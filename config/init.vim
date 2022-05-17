@@ -31,7 +31,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'editorconfig/editorconfig-vim' " Per-project editor config
 Plug 'janko-m/vim-test'              " Test runner
 Plug 'tpope/vim-dadbod'              " Database client
-Plug 'tpope/vim-fugitive'            " Git wrapper
 call plug#end()
 
 syntax on
