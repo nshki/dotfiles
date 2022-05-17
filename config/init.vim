@@ -63,7 +63,7 @@ let g:lightline =
   \       ['gitbranch', 'readonly', 'filename', 'modified']
   \     ]
   \   },
-  \   'component_function': { 'gitbranch': 'fugitive#head' }
+  \   'component_function': { 'gitbranch': 'FugitiveHead' }
   \ }
 let g:lightline.tabline = { 'left': [['buffers']], 'right': [['close']] }
 let g:lightline.component_expand = { 'buffers': 'lightline#bufferline#buffers' }
