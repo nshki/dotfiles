@@ -1,7 +1,0 @@
-brew 'bash'
-brew 'bash-completion'
-brew 'git'
-brew 'neofetch'
-brew 'neovim'
-brew 'ripgrep'
-brew 'tmux'
