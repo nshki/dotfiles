@@ -12,6 +12,7 @@ mkdir -p $dev_dir
 xcode-select --install
 
 # Switch default shell to Homebrew Bash.
+sudo bash -c 'echo "/opt/homebrew/bin/bash" >> /etc/shells'
 chsh -s /opt/homebrew/bin/bash
 
 # Install Homebrew and bundle.
@@ -32,11 +33,11 @@ rm -f ~/.tmuxline && ln -s $dev_dir/dotfiles/config/.tmuxline ~/.tmuxline
 
 # Programming languages.
 curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh
-nodenv install 16.16.0
-nodenv global 16.16.0
+nodenv install 16.14.0
+nodenv global 16.14.0
 pyenv install 3.10.5
 pyenv global 3.10.5
-rbenv install 3.1.2
+CFLAGS="-Wno-error=implicit-function-declaration" rbenv install 3.1.2
 rbenv global 3.1.2
 
 # Install LunarVim.
