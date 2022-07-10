@@ -16,7 +16,8 @@ chsh -s /opt/homebrew/bin/bash
 
 # Install Homebrew and bundle.
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-/opt/homebrew/bin/brew bundle --file=$dev_dir/dotfiles/config/Brewfile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+brew bundle --file=$dev_dir/dotfiles/config/Brewfile
 
 # Bash config.
 [ ! -f ~/.bash_local ] && touch ~/.bash_local
