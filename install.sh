@@ -15,8 +15,8 @@ xcode-select --install
 chsh -s /opt/homebrew/bin/bash
 
 # Install Homebrew and bundle.
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew bundle --file=$dev_dir/dotfiles/config/Brewfile
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/opt/homebrew/bin/brew bundle --file=$dev_dir/dotfiles/config/Brewfile
 
 # Bash config.
 [ ! -f ~/.bash_local ] && touch ~/.bash_local
