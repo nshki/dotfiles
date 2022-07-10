@@ -1,7 +1,7 @@
 Dotfiles
 ========
 
-This is my personal software setup repo.
+This is my personal software setup repo. Currently is configured for ARM Macs only.
 
 
 # Install
