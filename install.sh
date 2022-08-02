@@ -11,10 +11,6 @@ mkdir -p $dev_dir
 # Ensure CLT for Xcode are installed.
 xcode-select --install
 
-# Switch default shell to Homebrew Bash.
-sudo bash -c 'echo "/opt/homebrew/bin/bash" >> /etc/shells'
-chsh -s /opt/homebrew/bin/bash
-
 # Install Homebrew and bundle.
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -25,6 +21,10 @@ brew bundle --file=$dev_dir/dotfiles/config/Brewfile
 rm -f ~/.bash_aliases && ln -s $dev_dir/dotfiles/config/.bash_aliases ~/.bash_aliases
 rm -f ~/.bash_profile && ln -s $dev_dir/dotfiles/config/.bash_profile ~/.bash_profile
 source ~/.bash_profile
+
+# Switch default shell to Homebrew Bash.
+sudo bash -c 'echo "/opt/homebrew/bin/bash" >> /etc/shells'
+chsh -s /opt/homebrew/bin/bash
 
 # tmux and tpm config.
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -45,7 +45,7 @@ bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/
 
 # Install kitty.
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-git clone --depth 1 git@github.com:dexpota/kitty-themes.git ~/.config/kitty/kitty-themes
+git clone --depth 1 https://github.com/dexpota/kitty-themes.git ~/.config/kitty/kitty-themes
 rm -f ~/.config/kitty/theme.conf && ln -s ~/.config/kitty/kitty-themes/themes/OneDark.conf ~/.config/kitty/theme.conf
 rm -f ~/.config/kitty/kitty.conf && ln -s $dev_dir/dotfiles/config/kitty.conf ~/.config/kitty/kitty.conf
 
