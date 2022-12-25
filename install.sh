@@ -37,8 +37,8 @@ nodenv install 16.14.0
 nodenv global 16.14.0
 pyenv install 3.10.5
 pyenv global 3.10.5
-CFLAGS="-Wno-error=implicit-function-declaration" rbenv install 3.1.2
-rbenv global 3.1.2
+CFLAGS="-Wno-error=implicit-function-declaration" rbenv install 3.2.0
+rbenv global 3.2.0
 
 # Install LunarVim.
 bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
