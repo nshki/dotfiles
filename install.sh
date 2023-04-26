@@ -33,15 +33,15 @@ rm -f ~/.tmuxline && ln -s $dev_dir/dotfiles/config/.tmuxline ~/.tmuxline
 
 # Programming languages.
 curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh
-nodenv install 16.14.0
-nodenv global 16.14.0
+nodenv install 18.16.0
+nodenv global 18.16.0
 pyenv install 3.10.5
 pyenv global 3.10.5
-CFLAGS="-Wno-error=implicit-function-declaration" rbenv install 3.2.0
-rbenv global 3.2.0
+CFLAGS="-Wno-error=implicit-function-declaration" rbenv install 3.2.2
+rbenv global 3.2.2
 
 # Install LunarVim.
-bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
 
 # Install kitty.
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
