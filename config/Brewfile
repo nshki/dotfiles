@@ -12,7 +12,6 @@ brew "rbenv"
 brew "tmux"
 
 cask "1password"
-cask "alfred"
 cask "appcleaner"
 cask "docker"
 cask "firefox"
