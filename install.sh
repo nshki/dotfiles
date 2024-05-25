@@ -41,7 +41,7 @@ CFLAGS="-Wno-error=implicit-function-declaration" rbenv install 3.2.2
 rbenv global 3.2.2
 
 # Install LunarVim.
-LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
+LV_BRANCH='release-1.4/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.4/neovim-0.9/utils/installer/install.sh)
 
 # Install kitty.
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
