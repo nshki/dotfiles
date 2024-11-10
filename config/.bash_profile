@@ -4,7 +4,6 @@ export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export PYENV_ROOT="$HOME/.pyenv"
 set -o vi
 
 # Prompt.
@@ -18,12 +17,7 @@ fi
 # Homebrew package init.
 eval "$(brew shellenv)"
 eval "$(nodenv init -)"
-eval "$(pyenv init -)"
 eval "$(rbenv init -)"
-
-# Version manager init.
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-. "$HOME/.cargo/env"
 
 # Aliases and machine-specific config.
 source ~/.bash_aliases

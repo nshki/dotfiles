@@ -7,7 +7,6 @@ brew "libyaml"
 brew "neofetch"
 brew "neovim"
 brew "nodenv"
-brew "pyenv"
 brew "rbenv"
 brew "tmux"
 

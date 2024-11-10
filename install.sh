@@ -31,17 +31,15 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 rm -f ~/.tmux.conf && ln -s $dev_dir/dotfiles/config/.tmux.conf ~/.tmux.conf
 rm -f ~/.tmuxline && ln -s $dev_dir/dotfiles/config/.tmuxline ~/.tmuxline
 
-# Programming languages.
-curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh
-nodenv install 20.15.1
-nodenv global 20.15.1
-pyenv install 3.10.5
-pyenv global 3.10.5
-CFLAGS="-Wno-error=implicit-function-declaration" rbenv install 3.2.2
-rbenv global 3.3.4
+# Install Node and Ruby.
+nodenv install 22.11.0
+nodenv global 22.11.0
+rbenv install 3.3.6
+rbenv global 3.3.6
 
-# Install LunarVim.
-LV_BRANCH='release-1.4/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.4/neovim-0.9/utils/installer/install.sh)
+# Install LazyVim.
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+rm -rf ~/.config/nvim/.git
 
 # Install kitty.
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
@@ -54,7 +52,7 @@ read -p "Enter Git name: " git_name
 read -p "Enter Git email: " git_email
 git config --global user.name "$git_name"
 git config --global user.email $git_email
-git config --global core.editor lvim
+git config --global core.editor nvim
 
 # Setup SSH key with GitHub.
 #
