@@ -1,0 +1,26 @@
+# Aesthetic
+theme = light:tokyonight-day,dark:tokyonight
+background-opacity = 0.97
+background-blur-radius = 15
+font-family = FiraMono Nerd Font Mono
+font-size = 14
+macos-titlebar-style = tabs
+
+# Splits
+keybind = ctrl+b>u=new_split:up
+keybind = ctrl+b>r=new_split:right
+keybind = ctrl+b>d=new_split:down
+keybind = ctrl+b>l=new_split:left
+keybind = alt+k=goto_split:top
+keybind = alt+l=goto_split:right
+keybind = alt+j=goto_split:bottom
+keybind = alt+h=goto_split:left
+keybind = ctrl+b>z=toggle_split_zoom
+keybind = ctrl+b>e=equalize_splits
+
+# Scroll
+keybind = alt+u=scroll_page_up
+keybind = alt+d=scroll_page_down
+
+# Misc
+keybind = global:command+k=toggle_quick_terminal
