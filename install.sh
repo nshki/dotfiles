@@ -28,6 +28,8 @@ chsh -s /opt/homebrew/bin/bash
 
 # Ghostty config.
 ghostty_config_dir=~/Library/Application\ Support/com.mitchellh.ghostty
+mkdir -p "$ghostty_config_dir"
+[ ! -f "$ghostty_config_dir/config" ] && touch "$ghostty_config_dir/config"
 rm -f "$ghostty_config_dir/config" && ln -s "$dev_dir/dotfiles/config/ghostty_config" "$ghostty_config_dir/config"
 
 # Install Node and Ruby.
