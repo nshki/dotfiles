@@ -26,10 +26,9 @@ source ~/.bash_profile
 sudo bash -c 'echo "/opt/homebrew/bin/bash" >> /etc/shells'
 chsh -s /opt/homebrew/bin/bash
 
-# tmux and tpm config.
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-rm -f ~/.tmux.conf && ln -s $dev_dir/dotfiles/config/.tmux.conf ~/.tmux.conf
-rm -f ~/.tmuxline && ln -s $dev_dir/dotfiles/config/.tmuxline ~/.tmuxline
+# Ghostty config.
+ghostty_config_dir=~/Library/Application\ Support/com.mitchellh.ghostty
+rm -f "$ghostty_config_dir/config" && ln -s "$dev_dir/dotfiles/config/ghostty_config" "$ghostty_config_dir/config"
 
 # Install Node and Ruby.
 nodenv install 22.11.0
@@ -40,12 +39,6 @@ rbenv global 3.3.6
 # Install LazyVim.
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
-
-# Install kitty.
-curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-git clone --depth 1 https://github.com/dexpota/kitty-themes.git ~/.config/kitty/kitty-themes
-rm -f ~/.config/kitty/theme.conf && ln -s ~/.config/kitty/kitty-themes/themes/OneDark.conf ~/.config/kitty/theme.conf
-rm -f ~/.config/kitty/kitty.conf && ln -s $dev_dir/dotfiles/config/kitty.conf ~/.config/kitty/kitty.conf
 
 # Setup Git.
 read -p "Enter Git name: " git_name
@@ -64,5 +57,5 @@ fi
 eval "$(ssh-agent -s)"
 cp $dev_dir/dotfiles/config/sshconfig ~/.ssh/config
 ssh-add -K ~/.ssh/id_rsa
-pbcopy < ~/.ssh/id_rsa.pub
+pbcopy <~/.ssh/id_rsa.pub
 read -p "SSH key copied to clipboard. Add to GitHub (https://github.com/settings/keys). Press enter when done."
