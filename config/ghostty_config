@@ -23,4 +23,4 @@ keybind = alt+u=scroll_page_up
 keybind = alt+d=scroll_page_down
 
 # Misc
-keybind = global:command+k=toggle_quick_terminal
+keybind = global:command+shift+k=toggle_quick_terminal
