@@ -12,6 +12,6 @@ brew "rbenv"
 
 cask "1password"
 cask "appcleaner"
-cask "firefox"
 cask "ghostty"
 cask "orbstack"
+cask "zen-browser"
