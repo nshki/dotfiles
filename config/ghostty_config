@@ -2,7 +2,9 @@
 theme = light:tokyonight-day,dark:tokyonight
 background-opacity = 0.97
 background-blur-radius = 15
-font-family = FiraMono Nerd Font Mono
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
 font-size = 14
 macos-titlebar-style = tabs
 
