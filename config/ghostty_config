@@ -1,5 +1,5 @@
 # Aesthetic
-theme = light:TokyoNight Day,dark:TokyoNight
+theme = TokyoNight
 background-opacity = 0.97
 background-blur-radius = 15
 font-feature = -calt
@@ -23,6 +23,3 @@ keybind = ctrl+b>e=equalize_splits
 # Scroll
 keybind = alt+u=scroll_page_up
 keybind = alt+d=scroll_page_down
-
-# Misc
-keybind = global:command+shift+k=toggle_quick_terminal
