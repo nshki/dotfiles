@@ -17,7 +17,8 @@ fi
 # Homebrew package init.
 eval "$(brew shellenv)"
 eval "$(nodenv init -)"
-eval "$(rbenv init -)"
+eval "$(/opt/homebrew/bin/rv shell init bash)"
+eval "$(/opt/homebrew/bin/rv shell completions bash)"
 
 # Aliases and machine-specific config.
 source ~/.bash_aliases

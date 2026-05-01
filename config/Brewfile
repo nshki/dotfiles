@@ -8,7 +8,7 @@ brew "lazydocker"
 brew "lazygit"
 brew "neovim"
 brew "nodenv"
-brew "rbenv"
+brew "rv"
 
 cask "1password"
 cask "appcleaner"
