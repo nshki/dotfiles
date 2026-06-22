@@ -33,10 +33,9 @@ mkdir -p "$ghostty_config_dir"
 rm -f "$ghostty_config_dir/config" && ln -s "$dev_dir/dotfiles/config/ghostty_config" "$ghostty_config_dir/config"
 
 # Install Node and Ruby.
-nodenv install 22.11.0
-nodenv global 22.11.0
-rbenv install 3.3.6
-rbenv global 3.3.6
+nodenv install 24.17.0
+nodenv global 24.17.0
+rv ruby install 4.0.5
 
 # Install LazyVim.
 git clone https://github.com/LazyVim/starter ~/.config/nvim
