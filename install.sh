@@ -32,6 +32,11 @@ mkdir -p "$ghostty_config_dir"
 [ ! -f "$ghostty_config_dir/config" ] && touch "$ghostty_config_dir/config"
 rm -f "$ghostty_config_dir/config" && ln -s "$dev_dir/dotfiles/config/ghostty_config" "$ghostty_config_dir/config"
 
+# Hunk config.
+hunk_config_dir="$HOME/.config/hunk"
+mkdir -p "$hunk_config_dir"
+rm -f "$hunk_config_dir/config.toml" && ln -s "$dev_dir/dotfiles/config/hunk_config" "$hunk_config_dir/config.toml"
+
 # Install Node and Ruby.
 nodenv install 24.17.0
 nodenv global 24.17.0
