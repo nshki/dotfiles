@@ -1,5 +1,5 @@
 # Aesthetic
-theme = TokyoNight
+theme = light:TokyoNight Day,dark:TokyoNight
 background-opacity = 0.97
 background-blur-radius = 15
 font-feature = -calt
