@@ -23,3 +23,6 @@ keybind = ctrl+b>e=equalize_splits
 # Scroll
 keybind = alt+u=scroll_page_up
 keybind = alt+d=scroll_page_down
+
+# Bleeding edge
+auto-update-channel = tip
